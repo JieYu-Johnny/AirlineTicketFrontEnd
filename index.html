@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/bar.css" />
+
+
+
+<body>
+	<div class="header">
+        <a href="./index.html" class="logo">SCU Airlines</a>
+        <a href="./login.html" class="button">Login/Signup</a>
+		<a href="./order.html" class="button">Order</a>
+        <a href="./details.html" class="button">Booking Ticket</a>
+		<a href="./index.html" class="button active">Home</a>
+		
+    </div>
+	<div id="index-header">
+		<h1><span>Explore the Lands of Australia</span> </h1>
+	</div>
+
+	<main>
+		<div id="booking" class="section">
+			<div class="container">
+				<div class="booking-form">
+					<h4 id="error-message"> </h4>
+					<br>
+
+					<form name="top-form" id="form" action="##" method="get" onsubmit="return false">
+						<div class="form-group">
+							<div class="form-checkbox">
+								<label for="roundtrip">
+								<input type="radio" id="roundtrip" name="flight-type" onchange="activateReturnDate()">
+								<span></span>Roundtrip
+								</label>
+								<label for="one-way">
+								<input type="radio" id="one-way" name="flight-type" onchange="activateReturnDate()">
+								<span></span>One way
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">From</span>
+									<input class="form-control" id="origin" type="text" name="origin" pattern="[A-Za-z]{3,}" placeholder="Type City Name" required>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">To</span>
+									<input class="form-control" id="destination" type="text" name="destination" pattern="[A-Za-z]{3,}" placeholder="Type City Name" required>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">Depart</span>
+									<input class="form-control" id="depart-date" type="date" name="depart_date" required>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Return</span>
+									<input class="form-control" id="return-date" type="date" name="return_date" disabled>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+                                    <span class="form-label required"> No. of Adults(Age 12+) </span>
+									<input class="form-control" type="number" id="adults" min="1" max="10" value="1" name="adults" required>
+								</div>
+							</div>
+
+							<div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label"> No. of Children(Age 1-15) </span>
+									<input class="form-control" type="number" id="children" min="0" max="10" value="0" name="children">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">Travel class</span>
+									<select class="form-control" id="travel-class" name="travel_class"> 
+										<option>Economy class</option>
+										<option>Business class</option>
+										<option>First class</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn">Submit</button>
+								</div>
+							</div>	
+						</div>
+					</form>
+				</div>
+
+				<br><br>
+			
+				<br><br>
+			</div>
+		</div>
+	</main>
+
+	<script src="./js/index.js"></script>
+
+</body>
+</html>

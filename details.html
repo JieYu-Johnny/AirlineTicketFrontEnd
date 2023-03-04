@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Passenger Details </title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/bar.css" />
+
+
+</head>
+
+<body onload="AddElement()">
+	<div class="header">
+        <a href="./index.html" class="logo">SCU Airlines</a>
+        <a href="./login.html" class="button">Login/Signup</a>
+		<a href="#" class="button">Order</a>
+        <a href="#" class="button active">Booking Ticket</a>
+		<a href="./index.html" class="button">Home</a>
+		
+    </div>
+	<div id="detail-header">
+		<h1><span>Let the Journey Begin</span> </h1>
+	</div>
+
+	
+
+	<main>
+		<div id="booking" class="section">
+			<div class="container">
+                <div class="booking-form">
+					<div class="row">
+						<div class="col-md-6">
+							<h4><span id="travel-type">One Way</span></h4>
+							<h1><span id="originp">SYDNEY</span> to <span id="destinationp">MELBOURNE</span></h1>
+							<br>
+							<h4>Departure Date : <span id="departp"></span></h4>
+							<span id="arrivalp"></span>
+							<br>
+							<h4>Passengers: <span id="adultp">2 </span> Adults and <span id="childp"> 0 </span> Children. </h4>	
+						</div>
+						<div class="col-md-6">
+							<br>
+							<h3>Ticket Cost : </h3>
+							<hr>
+							<h4>Adult Passengers: <span id="adult-cost"> 2 X 55 = 110 AUD</span></h4>
+							<h4 id="child-cost"></h4>
+							<h3>Total Cost : <span id="ticket-cost">140 AUD</span></h3>
+						</div>		
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+						</div>
+						<div class="col-md-4">
+							<br><br>
+							<a href="./index.html"><button class="submit-btn">Cancel Ticket</button></a>
+						</div>		
+					</div>
+				</div>
+
+				<div class="booking-form" id="second-block">
+					<form name="form" id="form" action="##" method="get" onsubmit="return false">      
+                        <h3>Please fill the details below to continue</h3><br>
+                        <div id="PassengerInfo"> </div>  
+						<br><h4 id="error-message-passenger"> </h4>
+						<br><hr><br>
+
+						<div class="OtherDetails">
+							<h4> Other Details:</h4><br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label required">Phone Number </span>
+                                        <input name="phoneNumber" class="form-control" id="p-number" pattern="[0-9]{6,10}" type="tel" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label required">Email Id</span>
+                                        <input  name="email" class="form-control" type="email" required>
+                                    </div>
+                                </div>
+								<div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Food type</span>
+                                        <select class="form-control" id="p-food" name="footType">
+											<option><--Select--></option>
+                                            <option>veg</option>
+                                            <option>non-veg</option>    
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>									
+                            </div>
+
+							<div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+										<span class="form-label">Address</span>
+										<textarea class="form-control" id="p-address" name="address" rows="4" cols="50">
+										</textarea>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+
+						<br><h4 id="error-message-other"> </h4>
+                        <br><hr><br>
+
+                        <div class="PaymentDetails">
+							<div class="row">
+                            	<div class="col-md-3">
+                                	<div class="form-group">
+                                    	<h4 id="cost-text">Total Cost: $60</h4>
+                                	</div>
+                            	</div>
+								<div class="col-md-4">
+                                    <div class="form-group">
+										<span class="form-label required">Payment Method</span>
+                                        <select class="form-control" id="payment-method">
+											<option><--Select--></option>
+                                            <option>Master Card</option>
+                                            <option>Visa</option>
+                                            <option>Paypal</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+								<div class="col-md-4">
+									<div class="form-btn">
+										<button type="submit" class="submit-btn" id="book-payment" >Confirm Payment</button>
+									</div>
+								</div>
+							</div>
+                        </div>
+					</form>
+				</div>
+				<br><br>
+				<div class="booking-form" id="footer">
+					<h3>Proudly Presenting Our Team</h3>
+					<hr>
+					<div id="profiles">
+						<section class="me">
+							<h4>Saman Uzma</h4>
+							<a href="https://www.linkedin.com/in/samanuzma/" target="_blank"><img src="./img/linkedin.png" height="50px"></a>
+						</section>
+						<section class="me">
+							<h4>Young Hwa Son</h4>
+							<a href="https://www.linkedin.com/in/young-hwa-son-ab439a150/" target="_blank"><img src="./img/linkedin.png" height="50px"></a>
+						</section>
+						<section class="me">
+							<h4>Sonia Ranjith</h4>
+							<a href="https://www.linkedin.com/in/sonia-ranjith-31b740237/" target="_blank"><img src="./img/linkedin.png" height="50px"></a>
+						</section>
+						<section class="me">
+							<h4>YiRu William Chen</h4>
+							<a href="https://www.linkedin.com/in/yiru-william-chen-9536b961/" target="_blank"><img src="./img/linkedin.png" height="50px"></a>
+						</section>
+						<section class="me">
+							<h4> Sreekanth Manoharan </h4>
+							<a href="https://www.linkedin.com/in/sreekanthmanoharan/" target="_blank"><img src="./img/linkedin.png" height="50px"></a>
+						</section>
+					</div>
+				</div>
+				<br><br>
+			</div>
+		</div>
+	</main>
+
+	<script src="js/details.js"></script>
+
+</body>
+</html>
